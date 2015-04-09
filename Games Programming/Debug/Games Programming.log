@@ -1,0 +1,13 @@
+﻿Build started 09-Apr-15 12:13:49 PM.
+     1>Project "C:\Users\Mark Tempini\Desktop\Games Programming\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+     1>c:\users\mark tempini\desktop\games programming\games programming\main.cpp(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\mark tempini\desktop\games programming\games programming\main.cpp(37): error C2040: 'theSoundMgr' : 'int' differs in levels of indirection from 'cSoundMgr *'
+     1>c:\users\mark tempini\desktop\games programming\games programming\main.cpp(37): error C2059: syntax error : '->'
+     1>Done Building Project "C:\Users\Mark Tempini\Desktop\Games Programming\Games Programming\Games Programming.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.01
