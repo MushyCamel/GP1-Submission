@@ -1,5 +1,6 @@
 #pragma once
 #include "Includes.h"
+#include "cSoundMgr.h"
 
 class Sprite
 {
@@ -12,6 +13,7 @@ public:
 	glm::vec2 position;
 	glm::vec2 size;
 	//glm::vec2 spritePos2D;
+	cSoundMgr* m_SoundMgr;
 
 	int textureWidth;
 	int textureHeight;
@@ -25,6 +27,7 @@ public:
 	void setBoundingRect(RECT* pRect);		// Determine the bounding rectangle for the sprite
 	RECT getBoundingRect();		// Determine the bounding rectangle for the sprite
 	void renderCollisionBox();
+	void attachSoundMgr(cSoundMgr* soundMgr);  // Attach the Sound Manager
 
 	Sprite();
 	~Sprite();

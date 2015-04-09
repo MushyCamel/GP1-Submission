@@ -156,6 +156,8 @@ void keyboard(unsigned char k, int x, int y)
 		b->size = glm::vec2(10, 10);
 		b->SetTexture(t.getTexture());
 		sprites.push_back(b);
+		
+		m_SoundMgr->getSnd("FIRE")->playAudio(AL_TRUE);
 	}
 }
 

@@ -1,6 +1,7 @@
 #include "Sprite.h"
 
 
+
 Sprite::Sprite()
 {
 	position = glm::vec2(0, 0);
@@ -102,4 +103,9 @@ void Sprite::renderCollisionBox()
 glm::vec2 Sprite::getSpritePos()  // Return the sprites current position
 {
 	return Sprite::position;
+}
+
+void Sprite::attachSoundMgr(cSoundMgr* soundMgr)
+{
+	m_SoundMgr = soundMgr;
 }
