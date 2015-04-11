@@ -10,7 +10,6 @@ cFont.h
 // OpenGL Headers
 #include "Includes.h"
 
-using namespace std;
 
 class cFont
 {

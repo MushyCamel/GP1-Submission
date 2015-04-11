@@ -1,7 +1,6 @@
 #include "Sprite.h"
 
 
-
 Sprite::Sprite()
 {
 	position = glm::vec2(0, 0);
@@ -13,7 +12,9 @@ Sprite::~Sprite()
 {
 }
 
-void Sprite::update(){ }
+void Sprite::update(){
+
+}
 
 void Sprite::render()
 {
@@ -105,7 +106,40 @@ glm::vec2 Sprite::getSpritePos()  // Return the sprites current position
 	return Sprite::position;
 }
 
+
 void Sprite::attachSoundMgr(cSoundMgr* soundMgr)
 {
 	m_SoundMgr = soundMgr;
+}
+
+bool Sprite::collidedWith(RECT thisSpriteRect, RECT otherSpriteRect)
+{
+	// declare rectangles for intersection test
+	RECT tempRect;
+
+	// perform the intersection test
+	if (IntersectRect(&tempRect, &thisSpriteRect, &otherSpriteRect))
+		
+		return true;
+	else
+		return false;
+}
+
+float Sprite::lengthSQRD(glm::vec2 theLength)
+{
+	return (theLength.x * theLength.x) + (theLength.y * theLength.y);
+}
+
+void Sprite::setActive(bool sActive) 			// Set the sprite to active.
+{
+	mActive = sActive;
+}
+/*
+=================
+- Determine if the sprite is active.
+=================
+*/
+bool Sprite::isActive() 						// Determine if the sprite is active.
+{
+	return mActive;
 }

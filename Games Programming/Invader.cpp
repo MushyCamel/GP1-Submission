@@ -1,6 +1,8 @@
 #include "Invader.h"
 
+
 #define INTERSECTION_DIST 2.5f
+
 Invader::Invader()
 {
 	speed = 0;
@@ -12,11 +14,13 @@ Invader::Invader()
 	xPosition = 0.0f;
 	yPosition = 0.0f;
 	zPosition = -25.0f;
+	
 }
 
 
 Invader::~Invader()
 {
+
 }
 
 void Invader::update()
@@ -42,26 +46,14 @@ void Invader::update()
 
 		speed = -1;
 	}
+
+	setBoundingRect(&boundingRect);
+
+
 }
 
-bool Invader::collide(Bullet *bullet)
-{
-	if (invaderAlive && bullet[0].alive)
-	{
-		float distSquare = (xPosition - bullet[0].xPosition) * (xPosition - bullet[0].xPosition) + (yPosition - bullet[0].yPosition) * (yPosition - bullet[0].yPosition);
 
-		if (distSquare <= INTERSECTION_DIST)
-		{
-			return true;
-		}
-	}
-}
 
-bool Invader::Destroy(void)
-{
-	invaderAlive = false;
-	return false;
-}
 
 void Invader::renderCollisionBox()
 {

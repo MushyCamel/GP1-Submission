@@ -83,7 +83,7 @@
     <ClCompile Include="cTexture.cpp" />
     <ClCompile Include="Invader.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="Popup.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +95,7 @@
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="Invader.h" />
-    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Popup.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

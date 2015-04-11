@@ -3,7 +3,7 @@
 #include "cTexture.h"
 #include "Bullet.h"
 #include "Invader.h"
-#include "Menu.h"
+#include "Popup.h"
 #include "cFontMgr.h"
 #include "cFont.h"
 #include "cSoundMgr.h"
@@ -12,6 +12,8 @@
 
 
 
+vector<Invader*> theInvaders;
+vector<Bullet*> theBullets;
 std::vector<Sprite*> sprites;
 
 void resize(int width, int height);
@@ -19,6 +21,9 @@ void render();
 void keyboard(unsigned char k, int x, int y);
 void SetupInvaders();
 void init_menus();
+void Play(unsigned char k, int x, int y);
+
+
 
 
 // load game fontss
@@ -34,9 +39,6 @@ LPCSTR gameSounds[5] = { "Audio/Theme.wav", "Audio/FIRE.wav", "Audio/GRM_EXP.wav
 
 static cSoundMgr* theSoundMgr = cSoundMgr::getInstance();
 
-theSoundMgr; ->add("Theme", gameSounds[0]);
-//theSoundMgr->add("FIRE", gameSounds[1]);
-//theSoundMgr->add("GRM_EXP", gameSounds[2]);
 
 int main(int argc, char **argv)
 {
@@ -44,14 +46,15 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
+
 	//Create Window
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Invaders From Space");
 
-
-
-	//calls the method
-	init_menus();
+	theSoundMgr->add("Theme", gameSounds[0]);
+	theSoundMgr->add("FIRE", gameSounds[1]);
+	theSoundMgr->add("GRM_EXP", gameSounds[2]);
+	theSoundMgr->add("INVADERS", gameSounds[4]);
 
 	//Game Code
 	cTexture t = cTexture("Images/Ship.png");
@@ -59,10 +62,54 @@ int main(int argc, char **argv)
 	s->position = glm::vec2(400, 500);
 	s->size = glm::vec2(50, 50);
 	s->SetTexture(t.getTexture());
+	s->renderCollisionBox();
+	
+	
 	sprites.push_back(s);
+
+
+	
 
 	//calls the method
 	SetupInvaders();
+
+
+	//calls the method
+	init_menus();
+
+	for (vector<Bullet*>::iterator b = theBullets.begin(); b != theBullets.end(); ++b)
+	{
+		(*b)->update();
+		for (vector<Invader*>::iterator i = theInvaders.begin(); i != theInvaders.end(); ++i)
+		{
+			if ((*i)->collidedWith((*b)->getBoundingRect(), (*i)->getBoundingRect()))
+			{
+				// if a collision set the bullet and asteroid to false
+				(*i)->setActive(false);
+				(*b)->setActive(false);
+			}
+		}
+	}
+
+	vector<Bullet*>::iterator b = theBullets.begin();
+	while (b != theBullets.end())
+	{
+		if ((*b)->isActive() == false)
+		{
+			b = theBullets.erase(b);
+			// play the explosion sound.
+			theSoundMgr->getSnd("GRM_EXP")->playAudio(AL_TRUE);
+		}
+		else
+		{
+		
+			(*b)->render();
+			++b;
+		}
+	}
+
+
+	
 
 	//Open GL Functions
 	glutReshapeFunc(resize);
@@ -97,9 +144,15 @@ void SetupInvaders()
 			i->size = glm::vec2(25, 25);
 			i->leftLimit = 0;
 			i->rightLimit = 800;
-			i->SetTexture(tI.getTexture());
+			i->SetTexture(tI.getTexture());	
+			i->renderCollisionBox();
+			i->isActive() == true;
+			
 			sprites.push_back(i);
+			
+
 		}
+		
 	}
 }
 
@@ -127,10 +180,13 @@ void render()
 	for (Sprite* s : sprites)
 	{
 		s->render();
+
 	}
 
 	glutSwapBuffers();
 	glutPostRedisplay();
+
+	
 }
 
 //input control
@@ -146,7 +202,7 @@ void keyboard(unsigned char k, int x, int y)
 	{
 		sprites[0]->position.x += 5;
 	}
-	
+
 	//if space is pressed create bullet 
 	if (k == ' ')
 	{
@@ -155,10 +211,12 @@ void keyboard(unsigned char k, int x, int y)
 		b->position = sprites[0]->position + glm::vec2(20, 0);
 		b->size = glm::vec2(10, 10);
 		b->SetTexture(t.getTexture());
+		b->renderCollisionBox();
 		sprites.push_back(b);
-		
-		m_SoundMgr->getSnd("FIRE")->playAudio(AL_TRUE);
+	
+		theSoundMgr->getSnd("FIRE")->playAudio(AL_TRUE);
 	}
+
 }
 
 

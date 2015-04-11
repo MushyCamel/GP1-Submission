@@ -1,40 +1,32 @@
-﻿Build started 09-Apr-15 1:12:46 PM.
-     1>Project "C:\Users\Mark Tempini\Desktop\GP1SUBMISSION\GP1-Submission\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11-Apr-15 7:34:03 PM.
+     1>Project "C:\Users\Mark Tempini\Desktop\Games Programming\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bullet.cpp Invader.cpp Main.cpp Sprite.cpp
-         Sprite.cpp
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(65): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(66): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(67): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(68): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(82): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(94): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\sprite.cpp(95): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
          Main.cpp
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(37): error C2040: 'theSoundMgr' : 'int' differs in levels of indirection from 'cSoundMgr *'
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(37): error C2059: syntax error : '->'
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(160): error C2065: 'm_SoundMgr' : undeclared identifier
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(160): error C2227: left of '->getSnd' must point to class/struct/union/generic type
-                 type is 'unknown-type'
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\main.cpp(160): error C2227: left of '->playAudio' must point to class/struct/union/generic type
-         Invader.cpp
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(70): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(81): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(82): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(83): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(84): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-         Bullet.cpp
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\bullet.cpp(31): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\bullet.cpp(41): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\bullet.cpp(42): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\bullet.cpp(43): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\bullet.cpp(44): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
-         Generating Code...
-     1>c:\users\mark tempini\desktop\gp1submission\gp1-submission\games programming\invader.cpp(58): warning C4715: 'Invader::collide' : not all control paths return a value
-     1>Done Building Project "C:\Users\Mark Tempini\Desktop\GP1SUBMISSION\GP1-Submission\Games Programming\Games Programming.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\mark tempini\desktop\games programming\games programming\main.cpp(149): warning C4553: '==' : operator has no effect; did you intend '='?
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mark Tempini\Desktop\Games Programming\Debug\Games Programming.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mark Tempini\Desktop\Games Programming\Debug\Games Programming.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mark Tempini\Desktop\Games Programming\Debug\Games Programming.lib" /MACHINE:X86 Debug\Bullet.obj
+         Debug\cFont.obj
+         Debug\cFontMgr.obj
+         Debug\cSound.obj
+         Debug\cSoundMgr.obj
+         Debug\cTexture.obj
+         Debug\Invader.obj
+         Debug\Main.obj
+         Debug\Popup.obj
+         Debug\Sprite.obj
+         Libraries\alut.lib
+         Libraries\DevIL.lib
+         Libraries\freeglut.lib
+         Libraries\ftgl.lib
+         Libraries\glew32.lib
+         Libraries\glew32s.lib
+         Libraries\ILU.lib
+         Libraries\ILUT.lib
+         Libraries\OpenAL32.lib
+         Games Programming.vcxproj -> C:\Users\Mark Tempini\Desktop\Games Programming\Debug\Games Programming.exe
+     1>Done Building Project "C:\Users\Mark Tempini\Desktop\Games Programming\Games Programming\Games Programming.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:03.69
+Time Elapsed 00:00:01.41

@@ -19,7 +19,7 @@ Bullet::~Bullet()
 void Bullet::update()
 {
 	//Moves the bullet upwards
-	position.y --;
+	position.y -=5 ;
 
 	setBoundingRect(&boundingRect);
 }

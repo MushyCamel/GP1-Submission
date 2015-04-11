@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include "Bullet.h"
 
+
 class Invader: public Sprite
 {
 private:
@@ -13,11 +14,11 @@ public:
 	float rightLimit;
 	float xPosition, yPosition, zPosition; //Invaders position
 	bool invaderAlive;
-	void renderCollisionBox();
 
+
+	void renderCollisionBox();
 	void update();
-	bool collide(Bullet *bullet);
-	bool Destroy(void);
+
 
 	Invader();
 	~Invader();
