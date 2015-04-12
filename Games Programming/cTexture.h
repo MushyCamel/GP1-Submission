@@ -7,7 +7,7 @@ cTexture.h
 */
 #ifndef _CTEXTURE_H
 #define _CTEXTURE_H
-#include "Includes.h"
+#include "GameConstants.h"
 
 class cTexture
 {

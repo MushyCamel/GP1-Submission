@@ -1,222 +1,190 @@
-#include "Includes.h"
-#include "Sprite.h"
-#include "cTexture.h"
-#include "Bullet.h"
-#include "Invader.h"
-#include "Popup.h"
-#include "cFontMgr.h"
-#include "cFont.h"
+#define WIN32_LEAN_AND_MEAN
+#define WIN32_EXTRA_LEAN
+
+#define GLX_GLXEXT_LEGACY //Must be declared so that our local glxext.h is picked up, rather than the system one
+
+
+#include <windows.h>
+#include "windowOGL.h"
+#include "GameConstants.h"
+#include "cWNDManager.h"
+#include "cInputMgr.h"
 #include "cSoundMgr.h"
-#include "cSound.h"
+#include "cFontMgr.h"
+#include "cSprite.h"
+#include "invadersGame.h"
 
 
 
 
-vector<Invader*> theInvaders;
-vector<Bullet*> theBullets;
-std::vector<Sprite*> sprites;
-
-void resize(int width, int height);
-void render();
-void keyboard(unsigned char k, int x, int y);
-void SetupInvaders();
-void init_menus();
-void Play(unsigned char k, int x, int y);
-
-
-
-
-// load game fontss
-// Load Fonts
-LPCSTR gameFonts[2] = { "Fonts/digital-7.ttf", "Fonts/space age.ttf" };
-
-
-
-
-//loads in game sounds
-LPCSTR gameSounds[5] = { "Audio/Theme.wav", "Audio/FIRE.wav", "Audio/GRM_EXP.wav", "Audio/GUN_HIT.wav", "Audio/INVADERS.wav"  };
-
-
-static cSoundMgr* theSoundMgr = cSoundMgr::getInstance();
-
-
-int main(int argc, char **argv)
+int WINAPI WinMain(HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR cmdLine,
+	int cmdShow)
 {
-	//Start OpenGL
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
-
-	//Create Window
-	glutInitWindowSize(800, 600);
-	glutCreateWindow("Invaders From Space");
-
-	theSoundMgr->add("Theme", gameSounds[0]);
-	theSoundMgr->add("FIRE", gameSounds[1]);
-	theSoundMgr->add("GRM_EXP", gameSounds[2]);
-	theSoundMgr->add("INVADERS", gameSounds[4]);
-
-	//Game Code
-	cTexture t = cTexture("Images/Ship.png");
-	Sprite* s = new Sprite();
-	s->position = glm::vec2(400, 500);
-	s->size = glm::vec2(50, 50);
-	s->SetTexture(t.getTexture());
-	s->renderCollisionBox();
-	
-	
-	sprites.push_back(s);
-
+	//Set our window settings
+	const int windowWidth = 800;
+	const int windowHeight = 600;
+	const int windowBPP = 16;
 
 	
 
-	//calls the method
-	SetupInvaders();
+	//This is our window
+	static cWNDManager* pgmWNDMgr = cWNDManager::getInstance();
 
+	// This is the input manager
+	static cInputMgr* theInputMgr = cInputMgr::getInstance();
 
-	//calls the method
-	init_menus();
+	// This is the sound manager
+	static cSoundMgr* theSoundMgr = cSoundMgr::getInstance();
 
-	for (vector<Bullet*>::iterator b = theBullets.begin(); b != theBullets.end(); ++b)
+	// This is the Font manager
+	static cFontMgr* theFontMgr = cFontMgr::getInstance();
+
+	//The example OpenGL code
+	windowOGL theOGLWnd;
+
+	//Attach our the OpenGL window
+	pgmWNDMgr->attachOGLWnd(&theOGLWnd);
+
+	// Attach the keyboard manager
+	pgmWNDMgr->attachInputMgr(theInputMgr);
+
+	//Attempt to create the window
+	if (!pgmWNDMgr->createWND(windowWidth, windowHeight, windowBPP))
 	{
-		(*b)->update();
-		for (vector<Invader*>::iterator i = theInvaders.begin(); i != theInvaders.end(); ++i)
-		{
-			if ((*i)->collidedWith((*b)->getBoundingRect(), (*i)->getBoundingRect()))
-			{
-				// if a collision set the bullet and asteroid to false
-				(*i)->setActive(false);
-				(*b)->setActive(false);
-			}
-		}
-	}
+		//If it fails
 
-	vector<Bullet*>::iterator b = theBullets.begin();
-	while (b != theBullets.end())
-	{
-		if ((*b)->isActive() == false)
-		{
-			b = theBullets.erase(b);
-			// play the explosion sound.
-			theSoundMgr->getSnd("GRM_EXP")->playAudio(AL_TRUE);
-		}
-		else
-		{
-		
-			(*b)->render();
-			++b;
-		}
-	}
-
-
-	
-
-	//Open GL Functions
-	glutReshapeFunc(resize);
-	glutDisplayFunc(render);
-	glutKeyboardFunc(keyboard);
-
-	//if there is an error with glew this returns it
-	GLenum err = glewInit();
-	if (GLEW_OK != err)
-	{
-		fprintf(stderr, "GLEW error");
+		MessageBox(NULL, "Unable to create the OpenGL Window", "An error occurred", MB_ICONERROR | MB_OK);
+		pgmWNDMgr->destroyWND(); //Reset the display and exit
 		return 1;
 	}
 
-	glutMainLoop();
-	return 0;
-}
+	if (!theOGLWnd.initOGL(windowWidth, windowHeight)) //Initialize our example
+	{
+		MessageBox(NULL, "Could not initialize the application", "An error occurred", MB_ICONERROR | MB_OK);
+		pgmWNDMgr->destroyWND(); //Reset the display and exit
+		return 1;
+	}
 
-//This creates the invaders
-void SetupInvaders()
-{
-	cTexture tI = cTexture("Images/alien1.png");
+	//Clear key buffers
+	theInputMgr->clearBuffers(theInputMgr->KEYS_DOWN_BUFFER | theInputMgr->KEYS_PRESSED_BUFFER);
+
+	/* initialize random seed: */
+	srand((unsigned int)time(NULL));
+
+	// Create vector array of textures
+	LPCSTR texturesToUse[] = { "Images\\alien1.png", "Images\\alien2.png", "Images\\alien3.png", "Images\\alien4.png", "Images\\bullet.png" };
+	for (int tCount = 0; tCount < 5; tCount++)
+	{
+		theGameTextures.push_back(new cTexture());
+		theGameTextures[tCount]->createTexture(texturesToUse[tCount]);
+	}
+
+	// load game sounds
+	// Load Sound
+	LPCSTR gameSounds[3] = { "Audio/FIRE.wav", "Audio/Theme.wav", "Audio/GRM_EXP.wav" };
+
+	//theSoundMgr->add("Theme", gameSounds[0]);
+	theSoundMgr->add("FIRE", gameSounds[0]);
+	theSoundMgr->add("Theme", gameSounds[1]);
+	theSoundMgr->add("BOOM", gameSounds[2]);
+
+	// load game fontss
+	// Load Fonts
+	LPCSTR gameFonts[2] = { "Fonts/digital-7.ttf", "Fonts/space age.ttf" };
+
+	theFontMgr->addFont("SevenSeg", gameFonts[0], 24);
+	theFontMgr->addFont("Space", gameFonts[1], 24);
+
+
 	//creates the invaders to have five on the y
-	for (int y = 0; y < 5; y++)
-	{
-		//8 on the x for every y
-		for (int x = 0; x < 8; x++)
+	
+		for (int y = 0; y < 5; y++)
 		{
-			//loads the invader texture and sets size
-			Invader* i = new Invader();
-			i->position = glm::vec2(10 + (40 * x), 10 + (40 * y));
-			i->size = glm::vec2(25, 25);
-			i->leftLimit = 0;
-			i->rightLimit = 800;
-			i->SetTexture(tI.getTexture());	
-			i->renderCollisionBox();
-			i->isActive() == true;
-			
-			sprites.push_back(i);
-			
+			for (int x = 0; x < 25; x++)
+			{
+				theInvaders.push_back(new cInvader);
+				theInvaders[y, x]->spritePos2D = glm::vec2(10 + (30 * x), 10 + (30 * y));
+				theInvaders[y, x]->setSpriteTranslation(glm::vec2((rand() % 4 + 1), (rand() % 4 + 1)));
+				theInvaders[y, x]->setTexture(theGameTextures[0]->getTexture());
+				theInvaders[y, x]->setTextureDimensions(theGameTextures[0]->getTWidth(), theGameTextures[0]->getTHeight());
+				theInvaders[y, x]->setSpriteCentre();
+				theInvaders[y, x]->setActive(true);
+				theInvaders[y, x]->setMdlRadius();
 
+			}
 		}
+
 		
-	}
-}
-
-//Allows the resizing of the window
-void resize(int width, int height)
-{
-	glViewport(0, 0, width, height);
-	glMatrixMode(GL_PROJECTION);
-	glPushMatrix();
-	glLoadIdentity();
-	glOrtho(0, width, height, 0, -1, 1);
-	glMatrixMode(GL_MODELVIEW);
-	glPushMatrix();
-	glLoadIdentity();
-}
-
-
-//renders Sprites
-void render()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glLoadIdentity();
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-	for (Sprite* s : sprites)
-	{
-		s->render();
-
-	}
-
-	glutSwapBuffers();
-	glutPostRedisplay();
 
 	
-}
+		cTexture textureBkgd;
+		textureBkgd.createTexture("Images\\Background.png");
+		cBkGround spriteBkgd;
+		spriteBkgd.setSpritePos(glm::vec2(0, 0));
+		spriteBkgd.setTexture(textureBkgd.getTexture());
+		spriteBkgd.setTextureDimensions(textureBkgd.getTWidth(), textureBkgd.getTHeight());
 
-//input control
-void keyboard(unsigned char k, int x, int y)
-{
-	//Makes the ship move left
-	if (k == GLUT_KEY_LEFT)
-	{
-		sprites[0]->position.x -= 5;
+		cTexture rocketTxt;
+		rocketTxt.createTexture("Images\\Ship.png");
+		cRocket rocketSprite;
+		rocketSprite.attachInputMgr(theInputMgr); // Attach the input manager to the sprite
+		rocketSprite.setSpritePos(glm::vec2(400, 500));
+		rocketSprite.setTexture(rocketTxt.getTexture());
+		rocketSprite.setTextureDimensions(rocketTxt.getTWidth(), rocketTxt.getTHeight());
+		rocketSprite.setSpriteCentre();
+		rocketSprite.setRocketVelocity(glm::vec2(0.0f, 0.0f));
+		rocketSprite.renderCollisionBox();
+
+		// Attach sound manager to rocket sprite
+		rocketSprite.attachSoundMgr(theSoundMgr);
+
+
+		theSoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+		//This is the mainloop, we render frames until isRunning returns false
+		while (pgmWNDMgr->isWNDRunning())
+		{
+			pgmWNDMgr->processWNDEvents(); //Process any window events
+
+			theSoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+
+			//We get the time that passed since the last frame
+			float elapsedTime = pgmWNDMgr->getElapsedSeconds();
+
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			spriteBkgd.render();
+
+			rocketSprite.update(elapsedTime);
+
+
+
+			vector<cInvader*>::iterator invaderIterator = theInvaders.begin();
+			while (invaderIterator != theInvaders.end())
+			{
+				if ((*invaderIterator)->isActive() == false)
+				{
+					invaderIterator = theInvaders.erase(invaderIterator);
+
+				}
+				else
+				{
+					(*invaderIterator)->update(elapsedTime);
+					(*invaderIterator)->render();
+					++invaderIterator;
+				}
+			}
+
+			rocketSprite.render();
+
+
+			pgmWNDMgr->swapBuffers();
+			theInputMgr->clearBuffers(theInputMgr->KEYS_DOWN_BUFFER | theInputMgr->KEYS_PRESSED_BUFFER);
+		}
+
+		theOGLWnd.shutdown(); //Free any resources
+		pgmWNDMgr->destroyWND(); //Destroy the program window
+
+		return 0; //Return success
 	}
-	//Makes the ship move right
-	else if (k == GLUT_KEY_RIGHT)
-	{
-		sprites[0]->position.x += 5;
-	}
-
-	//if space is pressed create bullet 
-	if (k == ' ')
-	{
-		cTexture t = cTexture("Images/Bullet.png");
-		Bullet* b = new Bullet();
-		b->position = sprites[0]->position + glm::vec2(20, 0);
-		b->size = glm::vec2(10, 10);
-		b->SetTexture(t.getTexture());
-		b->renderCollisionBox();
-		sprites.push_back(b);
-	
-		theSoundMgr->getSnd("FIRE")->playAudio(AL_TRUE);
-	}
-
-}
-
-

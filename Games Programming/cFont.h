@@ -8,8 +8,9 @@ cFont.h
 #define _CFONT_H
 
 // OpenGL Headers
-#include "Includes.h"
+#include "GameConstants.h"
 
+using namespace std;
 
 class cFont
 {

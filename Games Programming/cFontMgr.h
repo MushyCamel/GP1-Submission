@@ -7,8 +7,7 @@ cFontMgr.h
 */
 #ifndef _CFONTMGR_H
 #define _CFONTMGR_H
-
-#include "Includes.h"
+#include "GameConstants.h"
 #include "cFont.h"
 
 class cFontMgr

@@ -1,9 +1,14 @@
+/*
+==========================================================================
+cSound.h
+==========================================================================
+*/
 
 #ifndef _SOUND_H
 #define _SOUND_H
 
 // OpenGL Headers
-#include "Includes.h"
+#include "GameConstants.h"
 #include <string>
 #include <iostream>
 #include <fstream>

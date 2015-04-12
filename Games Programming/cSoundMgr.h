@@ -8,7 +8,7 @@ cSoundMgr.h
 #define _SOUNDMGR_H
 
 // OpenGL Headers
-#include "Includes.h"
+#include "GameConstants.h"
 #include "cSound.h"
 
 
