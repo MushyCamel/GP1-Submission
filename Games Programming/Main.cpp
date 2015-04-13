@@ -99,7 +99,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	theFontMgr->addFont("Space", gameFonts[1], 24);
 
 
-	//creates the invaders to have five on the y
+	
 	
 		for (int y = 0; y < 5; y++)
 		{
@@ -143,12 +143,13 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 
 		theSoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+
 		//This is the mainloop, we render frames until isRunning returns false
 		while (pgmWNDMgr->isWNDRunning())
 		{
 			pgmWNDMgr->processWNDEvents(); //Process any window events
 
-			theSoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+
 
 			//We get the time that passed since the last frame
 			float elapsedTime = pgmWNDMgr->getElapsedSeconds();

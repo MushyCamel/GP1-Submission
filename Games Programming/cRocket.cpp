@@ -70,7 +70,7 @@ void cRocket::update(float deltaTime)
 	}
 
 
-	m_SoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+
 
 	/*
 	==============================================================
