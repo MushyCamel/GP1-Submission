@@ -120,14 +120,10 @@ void cInvader::renderCollisionBox()
 
 cInvader::cInvader(){
 
-	leftLimit = 0;
-	rightLimit = 800;
+	leftLimit = 10;
+	rightLimit = 790;
 	speed = 0;
 	moveRight = true;
-
-	xPosition = 0.0f;
-	yPosition = 0.0f;
-	zPosition = -25.0f;
 
 }
 

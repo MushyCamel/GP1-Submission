@@ -58,8 +58,8 @@ void cRocket::update(float deltaTime)
 		int numBullets = theBullets.size() - 1;
 		theBullets[numBullets]->setSpritePos(glm::vec2(spritePos2D.x , spritePos2D.y));
 		theBullets[numBullets]->setSpriteTranslation(glm::vec2(2.0f, 2.0f));
-		theBullets[numBullets]->setTexture(theGameTextures[4]->getTexture());
-		theBullets[numBullets]->setTextureDimensions(theGameTextures[4]->getTWidth(), theGameTextures[4]->getTHeight());
+		theBullets[numBullets]->setTexture(theGameTextures[1]->getTexture());
+		theBullets[numBullets]->setTextureDimensions(theGameTextures[1]->getTWidth(), theGameTextures[1]->getTHeight());
 		theBullets[numBullets]->setSpriteCentre();
 		theBullets[numBullets]->setBulletVelocity(glm::vec2(0.0f, 0.0f));
 
@@ -72,41 +72,6 @@ void cRocket::update(float deltaTime)
 
 
 
-	/*
-	==============================================================
-	| Check for collisions
-	==============================================================
-	*/
-	for (vector<cBullet*>::iterator bulletIterartor = theBullets.begin(); bulletIterartor != theBullets.end(); ++bulletIterartor)
-	{
-		(*bulletIterartor)->update(deltaTime);
-		for (vector<cInvader*>::iterator asteroidIterator = theInvaders.begin(); asteroidIterator != theInvaders.end(); ++asteroidIterator)
-		{
-			if ((*asteroidIterator)->collidedWith((*asteroidIterator)->getBoundingRect(), (*bulletIterartor)->getBoundingRect()))
-			{
-				// if a collision set the bullet and asteroid to false
-				(*asteroidIterator)->setActive(false);
-				(*bulletIterartor)->setActive(false);
-			}
-		}
-	}
-
-	vector<cBullet*>::iterator bulletIterartor = theBullets.begin();
-	while (bulletIterartor != theBullets.end())
-	{
-		if ((*bulletIterartor)->isActive() == false)
-		{
-			bulletIterartor = theBullets.erase(bulletIterartor);
-			// play the explosion sound.
-			m_SoundMgr->getSnd("BOOM")->playAudio(AL_TRUE);
-		}
-		else
-		{
-			//(*bulletIterartor)->update(deltaTime);
-			(*bulletIterartor)->render();
-			++bulletIterartor;
-		}
-	}
 }
 /*
 =================================================================

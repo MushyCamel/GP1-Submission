@@ -21,7 +21,7 @@ private:
 public:
 	float leftLimit;
 	float rightLimit;
-	float xPosition, yPosition, zPosition; //Invaders position
+
 
 	cInvader();
 	~cInvader();

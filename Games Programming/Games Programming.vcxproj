@@ -89,6 +89,7 @@
     <ClCompile Include="cTexture.cpp" />
     <ClCompile Include="cWNDManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sceneMgr.cpp" />
     <ClCompile Include="windowOGL.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +107,7 @@
     <ClInclude Include="cTexture.h" />
     <ClInclude Include="cWNDManager.h" />
     <ClInclude Include="GameConstants.h" />
+    <ClInclude Include="sceneMgr.h" />
     <ClInclude Include="wglext.h" />
     <ClInclude Include="windowOGL.h" />
   </ItemGroup>
