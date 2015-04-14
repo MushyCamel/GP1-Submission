@@ -15,6 +15,7 @@
 #include "cFontMgr.h"
 
 
+
 enum SCENES_ENUM
 {
 	intro = 0,
@@ -35,8 +36,6 @@ private:
 	cFontMgr* theFontMgr;
 
 	int score;
-	int scoreAdd;
-	int total;
 
 	cTexture rocketTxt;
 	cRocket rocketSprite;
@@ -53,7 +52,6 @@ private:
 	cBkGround introScreen;
 	cBkGround EndScreenWin;
 	cBkGround EndScreenLose;
-
 
 public:
 	sceneMgr(int windowWidthValue, int windowHeightValue, cInputMgr* theInputMgrValue, cSoundMgr* theSoundMgrValue, cFontMgr* theFontMgrValue);

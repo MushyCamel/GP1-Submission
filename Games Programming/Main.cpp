@@ -78,6 +78,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 
 	theSoundMgr->getSnd("Theme")->playAudio(AL_TRUE);
+
 	//This is the mainloop, we render frames until isRunning returns false
 	while (pgmWNDMgr->isWNDRunning())
 	{

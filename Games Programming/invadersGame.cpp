@@ -9,4 +9,3 @@ asteroidsGame.cpp
 vector<cTexture*> theGameTextures;
 vector<cInvader*> theInvaders;
 vector<cBullet*> theBullets;
-vector<cSprite*> sprites;

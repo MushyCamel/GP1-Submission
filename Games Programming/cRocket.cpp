@@ -50,7 +50,6 @@ void cRocket::update(float deltaTime)
 		spritePos2D.x -= 5.0;
 	}
 
-
 	if (m_InputMgr->isKeyDown(VK_SPACE))
 	{
 		// Add new bullet sprite to the vector array
@@ -68,10 +67,6 @@ void cRocket::update(float deltaTime)
 		// play the firing sound
 		m_SoundMgr->getSnd("FIRE")->playAudio(AL_TRUE);
 	}
-
-
-
-
 }
 /*
 =================================================================

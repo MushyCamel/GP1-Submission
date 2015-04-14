@@ -43,9 +43,6 @@ Update the sprite position
 void cBullet::update(float deltaTime)
 {
 
-
-
-	
 	spritePos2D.y -= 5;
 	
 	spritePos2D += bulletVelocity * deltaTime;

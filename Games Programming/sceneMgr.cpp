@@ -86,7 +86,6 @@ sceneMgr::sceneMgr(int windowWidthValue, int windowHeightValue, cInputMgr* theIn
 
 
 	score = 0;
-	scoreAdd = 10;
 
 }
 
@@ -153,7 +152,6 @@ void sceneMgr::update(double elapsedTime)
 				{
 					invaderIterator = theInvaders.erase(invaderIterator);
 
-
 				}
 				else
 				{
@@ -183,6 +181,8 @@ void sceneMgr::update(double elapsedTime)
 					}
 				}
 			}
+
+
 
 			vector<cBullet*>::iterator bulletIterartor = theBullets.begin();
 			while (bulletIterartor != theBullets.end())
@@ -246,4 +246,3 @@ void sceneMgr::update(double elapsedTime)
 		}
 }
 	
-

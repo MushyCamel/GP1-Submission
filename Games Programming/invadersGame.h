@@ -10,6 +10,5 @@
 extern vector<cTexture*> theGameTextures;
 extern vector<cInvader*> theInvaders;
 extern vector<cBullet*> theBullets;
-extern vector<cSprite*> sprites;
 
 #endif

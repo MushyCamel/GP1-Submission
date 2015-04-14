@@ -1,23 +1,9 @@
-c:\users\mark tempini\desktop\games programming\games programming\debug\vc120.pdb
-c:\users\mark tempini\desktop\games programming\games programming\debug\vc120.idb
-c:\users\mark tempini\desktop\games programming\games programming\debug\bullet.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\cfont.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\cfontmgr.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\csound.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\csoundmgr.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\ctexture.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\invader.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\menu.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\splash.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\sprite.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\main.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\gamestate.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\popup.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\statemanager.obj
-c:\users\mark tempini\desktop\games programming\games programming\debug\cbkground.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\vc120.pdb
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\vc120.idb
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\bullet.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\invadersgame.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cinvader.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cbkground.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cbullet.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cfont.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cfontmgr.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cinputmgr.obj
@@ -27,24 +13,16 @@ c:\users\mark tempini\desktop\games programming redone\games programming redone\
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\csprite.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\ctexture.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cwndmanager.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\invader.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\invadersgame.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\main.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\popup.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\windowogl.obj
-c:\users\mark tempini\desktop\games programming\debug\games programming.ilk
-c:\users\mark tempini\desktop\games programming\debug\games programming.exe
-c:\users\mark tempini\desktop\games programming\debug\games programming.pdb
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\scenemgr.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\debug\games programming.ilk
 c:\users\mark tempini\desktop\games programming redone\games programming redone\debug\games programming.exe
 c:\users\mark tempini\desktop\games programming redone\games programming redone\debug\games programming.pdb
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\cbkground.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\gamestate.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\mainmenu.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\menu.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\splash.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\sprite.obj
-c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\statemanager.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\asteroidsgame.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\bullet.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\invader.obj
+c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\popup.obj
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\games pr.0ff7760f.tlog\cl.command.1.tlog
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\games pr.0ff7760f.tlog\cl.read.1.tlog
 c:\users\mark tempini\desktop\games programming redone\games programming redone\games programming\debug\games pr.0ff7760f.tlog\cl.write.1.tlog
