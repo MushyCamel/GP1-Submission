@@ -1,0 +1,93 @@
+﻿Build started 14-Apr-15 5:39:37 PM.
+     1>Project "C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt invadersGame.cpp cInvader.cpp cBkGround.cpp cBullet.cpp cFont.cpp cFontMgr.cpp cInputMgr.cpp cRocket.cpp cSound.cpp cSoundMgr.cpp cSprite.cpp cTexture.cpp cWNDManager.cpp main.cpp sceneMgr.cpp windowOGL.cpp
+         invadersGame.cpp
+         cInvader.cpp
+     1>cInvader.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(31): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(101): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(112): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(113): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(114): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cInvader.cpp(115): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+         cBkGround.cpp
+         cBullet.cpp
+     1>cBullet.cpp(24): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(26): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(28): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(30): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(82): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(93): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(94): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(95): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cBullet.cpp(96): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+         cFont.cpp
+         cFontMgr.cpp
+         cInputMgr.cpp
+         cRocket.cpp
+     1>cRocket.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cRocket.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cRocket.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cRocket.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         cSound.cpp
+         cSoundMgr.cpp
+         cSprite.cpp
+     1>cSprite.cpp(106): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>cSprite.cpp(107): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>cSprite.cpp(161): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(163): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(165): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(187): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>cSprite.cpp(222): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>cSprite.cpp(223): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>cSprite.cpp(224): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>cSprite.cpp(225): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>cSprite.cpp(282): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(294): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(295): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>cSprite.cpp(296): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         cTexture.cpp
+         cWNDManager.cpp
+         main.cpp
+         sceneMgr.cpp
+     1>sceneMgr.cpp(158): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>sceneMgr.cpp(171): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>sceneMgr.cpp(203): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         windowOGL.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.lib" /MACHINE:X86 /SAFESEH Release\invadersGame.obj
+         Release\cInvader.obj
+         Release\cBkGround.obj
+         Release\cBullet.obj
+         Release\cFont.obj
+         Release\cFontMgr.obj
+         Release\cInputMgr.obj
+         Release\cRocket.obj
+         Release\cSound.obj
+         Release\cSoundMgr.obj
+         Release\cSprite.obj
+         Release\cTexture.obj
+         Release\cWNDManager.obj
+         Release\main.obj
+         Release\sceneMgr.obj
+         Release\windowOGL.obj
+         Libraries\alut.lib
+         Libraries\DevIL.lib
+         Libraries\freeglut.lib
+         Libraries\ftgl.lib
+         Libraries\glew32.lib
+         Libraries\glew32s.lib
+         Libraries\ILU.lib
+         Libraries\ILUT.lib
+         Libraries\OpenAL32.lib
+         Generating code
+         Finished generating code
+         Games Programming.vcxproj -> C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.exe
+     1>Done Building Project "C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Games Programming\Games Programming.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.71
