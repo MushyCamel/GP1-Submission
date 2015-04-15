@@ -1,5 +1,5 @@
-﻿Build started 14-Apr-15 5:39:37 PM.
-     1>Project "C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
+﻿Build started 15-Apr-15 1:13:43 AM.
+     1>Project "C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Games Programming\Games Programming.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt invadersGame.cpp cInvader.cpp cBkGround.cpp cBullet.cpp cFont.cpp cFontMgr.cpp cInputMgr.cpp cRocket.cpp cSound.cpp cSoundMgr.cpp cSprite.cpp cTexture.cpp cWNDManager.cpp main.cpp sceneMgr.cpp windowOGL.cpp
          invadersGame.cpp
@@ -58,7 +58,7 @@
      1>sceneMgr.cpp(203): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
          windowOGL.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.lib" /MACHINE:X86 /SAFESEH Release\invadersGame.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Release\Games Programming.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Release\Games Programming.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Release\Games Programming.lib" /MACHINE:X86 /SAFESEH Release\invadersGame.obj
          Release\cInvader.obj
          Release\cBkGround.obj
          Release\cBullet.obj
@@ -85,9 +85,9 @@
          Libraries\OpenAL32.lib
          Generating code
          Finished generating code
-         Games Programming.vcxproj -> C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Release\Games Programming.exe
-     1>Done Building Project "C:\Users\Mark Tempini\Desktop\gp1submission\Mark-Tempini-GP1-Submission\MTEMPI200 - GP1 Project files\Games Programming\Games Programming.vcxproj" (Build target(s)).
+         Games Programming.vcxproj -> C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Release\Games Programming.exe
+     1>Done Building Project "C:\Users\Mark Tempini\Desktop\New folder\Mark-Tempini-GP1-Submission\Games Programming\Games Programming.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.71
+Time Elapsed 00:00:12.67
